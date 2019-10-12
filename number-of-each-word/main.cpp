@@ -28,7 +28,5 @@ int main()
 		std::cout << a.first << '\t' << a.second << std::endl;
 	}
 	
-	inf.close();
-	
 	return 0;
 }

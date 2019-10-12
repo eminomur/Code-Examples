@@ -24,7 +24,7 @@ int main()
 		++m[str];
 	}
 	
-	for (auto &a : m) {
+	for (auto& a : m) {
 		std::cout << a.first << '\t' << a.second << std::endl;
 	}
 	

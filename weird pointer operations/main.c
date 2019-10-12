@@ -1,3 +1,5 @@
+// If you compile and run this program, it is likely to crash
+
 #include <stdio.h>
 
 // This function accesses function main using its adress

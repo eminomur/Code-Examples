@@ -1,6 +1,7 @@
 // Author: Muhammed Emin ÖMÜR
 
 #include <stdio.h>
+#include <string.h>
 
 int
 for_int(const void *left, const void *right)
@@ -14,6 +15,20 @@ for_int(const void *left, const void *right)
         return (-1);
     } else {
         return (0);
+    }
+}
+
+int
+for_string(const void *left, const void *right)
+{
+    int result = strcmp(*(char **) right, *(char **) left);
+    
+    if (result > 0) {
+        return (1);
+    } else if (result == 0) {
+        return (0);
+    } else {
+        return (-1);
     }
 }
 
@@ -47,9 +62,11 @@ int
 main(void)
 {
     int arr[] = {-4, 1, 2, 3, 4, 5, 11, 122, 123, 124, 125, 888, 23333, 99999};
+    const char *str_arr[] = {"A", "Ali", "Ata", "Bak", "Git"};
     int key = 99999;
+    const char *str_key = "Git";
     
-    const void *result = bsearch(&key, arr, sizeof (arr) / sizeof (int), sizeof (int), for_int);
+    const void *result = bsearch(&str_key, str_arr, sizeof (str_arr) / sizeof (char *), sizeof (char *), for_string);
     
     if (result) {
         printf("Value exist\n");

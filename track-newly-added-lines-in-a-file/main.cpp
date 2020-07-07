@@ -23,7 +23,7 @@ int main()
 	int previous_input_position = 0;
 
 	if (!in_file.is_open()) {
-		std::cerr << "Error opening file\n";
+		std::cerr << "Error opening file!\n";
 		std::exit(EXIT_FAILURE);
 	}
 

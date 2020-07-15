@@ -25,8 +25,8 @@ eat(struct philosopher *p)
 			// It seems something bad happened, run!
 		}
 	}
-	pthread_mutex_unlock(p->right_fork_mutex);
 	pthread_mutex_unlock(p->left_fork_mutex);
+	pthread_mutex_unlock(p->right_fork_mutex);
 }
 
 void
